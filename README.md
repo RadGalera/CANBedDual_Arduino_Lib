@@ -1,3 +1,13 @@
+> ## Fork notes
+>
+> This fork contains fixes that were never merged upstream:
+>
+> 1. **issue #6 fix** — `read()` now requests `dtaLen` bytes instead of always 8.
+>    This prevents data corruption when reading short CAN frames (<8 bytes).
+>    See [original issue](https://github.com/Longan-Labs/CANBedDual_Arduino_Lib/issues/6).
+> 2. **Refactor** — magic number `0x41` replaced with `I2C_ADDR` constant from header.
+> 3. **Cleanup** — removed redundant manual byte-splitting in `send()` (already done by `long2char`).
+
 # Longan Labs CANBed Dual Arduino Library
 
 [![Actions Status](https://github.com/arduino/arduino-cli-example/workflows/test/badge.svg)](https://github.com/arduino/arduino-cli-example/actions)
